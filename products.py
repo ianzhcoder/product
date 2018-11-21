@@ -12,8 +12,20 @@ while True:
     #products.append(p)
     #可再簡化成:
     products.append([product,price])
-    #products = [p]
+    
 print (products)    #二維 [[],[]]
 #for Loop
 for p in products:
     print (p[0], "的售價是:", p[1])
+
+
+#存成檔案.txt & .csv
+#目錄已存在相同名稱則覆蓋該檔案
+with open ('products.txt', 'w') as f:
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n')
+
+with open ('products.csv', 'w') as f:
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n')
+
